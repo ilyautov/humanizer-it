@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Umanizzare testo IA in italiano: la skill humanizer-it</title>
+<meta name="description" content="humanizer-it: skill open-source e gratuita per Claude. Umanizza il testo IA in italiano, toglie i segni dell'intelligenza artificiale e il burocratese, rende il testo vivo.">
+<meta name="keywords" content="umanizzare testo IA, togliere segni intelligenza artificiale, rendere testo naturale, humanizer italiano, testo IA italiano, eliminare tracce AI dal testo, umanizzare testo gratis">
+<link rel="canonical" href="https://ilyautov.github.io/humanizer-it/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Umanizzare testo IA in italiano: la skill humanizer-it">
+<meta property="og:description" content="Skill open-source e gratuita per Claude. Toglie i segni dell'IA nel testo italiano e lo rende vivo.">
+<meta property="og:url" content="https://ilyautov.github.io/humanizer-it/">
+<meta property="og:image" content="https://ilyautov.github.io/humanizer-it/social-preview.png">
+<meta property="og:locale" content="it_IT">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Umanizzare testo IA in italiano: humanizer-it">
+<meta name="twitter:image" content="https://ilyautov.github.io/humanizer-it/social-preview.png">
+<meta name="twitter:description" content="Skill gratuita per Claude: toglie i segni dell'IA nel testo italiano.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/png" href="icon.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "humanizer-it",
+  "url": "https://ilyautov.github.io/humanizer-it/",
+  "description": "Skill open-source e gratuita per Claude che umanizza il testo IA in italiano e toglie i segni dell'intelligenza artificiale.",
+  "inLanguage": "it"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Come si umanizza un testo scritto dall'IA?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Togli i segni della generazione automatica: il burocratese e lo stile nominale (-zione, -mento), i calchi dall'inglese, il trattino lungo, il ritmo piatto delle frasi. Rimetti la voce viva: gli intercalari (allora, insomma, magari), i clitici ci/ne, le dislocazioni, l'ironia per litote, frasi di lunghezza variabile. La skill humanizer-it lo fa in automatico dentro Claude, su 52 segni del testo IA."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "humanizer-it è gratuita?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sì. humanizer-it è una skill open-source con licenza MIT. La skill è gratuita, paghi solo l'uso del modello Claude o lo usi nei limiti del tuo piano Claude Code, Cowork o API. Non ci sono abbonamenti separati né limiti per «rendere il testo umano»."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Serve un rilevatore come GPTZero per verificare il risultato?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Inseguire lo «zero al rilevatore» è la cosa sbagliata: i rilevatori migliori sull'italiano colpiscono i modelli con struttura anglosassone, ma lasciano passare i testi generati da modelli nativamente italiani. Meglio ottimizzare la qualità e la leggibilità del testo. Approfondimento nell'articolo sui rilevatori IA in italiano."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "In cosa humanizer-it è diversa dallo humanizer inglese?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Il testo IA italiano ha una fisica sua: il burocratese, lo stile nominale, i calchi dalla sintassi inglese («impronte algoritmiche dell'inglese»), gli intercalari e i clitici ci/ne mancanti, l'ironia per antifrasi appiattita. Le regole inglesi non si trasferiscono. humanizer-it è tarata sull'italiano e prende ciò che gli strumenti inglesi non vedono."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">humanizer<span>-it</span></a>
+    <nav class="site-nav" aria-label="Menu principale">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="togliere-tracce-ia.html">Togliere le tracce dell'IA</a>
+      <a href="segni-testo-ia.html">52 segni</a>
+      <a href="rilevatori-ia-italiano.html">Rilevatori IA</a>
+      <a href="antiplagio-vs-ia.html">Antiplagio e IA</a>
+    </nav>
+    <div class="head-icons">
+      <a href="https://github.com/ilyautov/humanizer-it" aria-label="Repository GitHub di humanizer-it">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55 0-.27-.01-1.17-.02-2.12-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.69 1.25 3.35.96.1-.75.4-1.25.73-1.54-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.16-1.18 3.16-1.18.63 1.59.24 2.76.12 3.05.74.81 1.18 1.83 1.18 3.09 0 4.41-2.69 5.38-5.25 5.67.41.35.78 1.05.78 2.12 0 1.53-.01 2.76-.01 3.14 0 .3.2.66.8.55A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
+      </a>
+      <a href="https://t.me/gorilla_under_hood" aria-label="Canale Telegram dell'autore, Under the Hood">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.94 3.27a1.5 1.5 0 0 0-1.62-.22L2.9 10.66c-1.22.54-1.16 2.3.1 2.74l4.4 1.54 1.7 5.32c.36 1.12 1.78 1.4 2.54.51l2.4-2.8 4.43 3.25c.9.66 2.18.17 2.4-.92l2.52-15.4a1.5 1.5 0 0 0-.45-1.63ZM9.5 14.4l8.4-7.6c.27-.24-.06-.65-.37-.46L7.4 12.6l-3.9-1.36 16.7-7.13-2.3 14.1-4.7-3.46-1.96 2.28-.74-2.63Z"/></svg>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main>
+<div class="wrap hero">
+
+  <ul class="eyebrow">
+    <li class="hot">open source · MIT</li>
+    <li>skill per Claude</li>
+    <li>v0.1</li>
+    <li>scanner incluso</li>
+  </ul>
+
+  <h1>Umanizzare il testo IA italiano: togliere i segni dell'intelligenza artificiale</h1>
+  <p class="lede">humanizer-it è una skill open-source e gratuita per Claude. Prende il testo sterile dell'IA e ci rimette dentro l'italiano vivo: con una voce, un ritmo, un carattere. Non un ritocco su una lista di parole, ma una riscrittura vera.</p>
+
+  <div class="cta-row">
+    <a class="cta" href="https://github.com/ilyautov/humanizer-it">Installa la skill su GitHub</a>
+    <a class="cta-secondary" href="#come-funziona">Come funziona →</a>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><b>52</b><span>segni del testo IA nel catalogo</span></div>
+    <div class="stat"><b>15</b><span>divieti assoluti</span></div>
+    <div class="stat"><b>3</b><span>modalità: pulizia, riscrittura, audit</span></div>
+    <div class="stat"><b>0 €</b><span>licenza MIT, senza abbonamenti</span></div>
+  </div>
+
+  <div class="term">
+    <div class="term-bar"><span></span><span></span><span></span><em>humanizer-it · modalità «Audit»</em></div>
+    <pre class="term-body"><code><span class="tn">$</span> <span class="ta">python3 scripts/scan.py</span> bozza.md
+<span class="tb">HARD BAN</span>   «non solo… ma anche» ×2 · «gioca un ruolo cruciale» ×1 · trattino «—» ×6
+<span class="tw">Marcatori</span>  burocratese ×4 · calchi ×3 · «è importante notare che» ×1
+<span class="tw">Ritmo</span>      CV 0.19: piatto come un metronomo (testo vivo ≥0.45)
+<span class="tb">Verdetto</span>   generazione IA molto probabile
+<span class="tn">dopo humanizer-it:</span>
+<span class="tg">Verdetto</span>   pulito: divieti 0, marcatori 1, CV 0.74</code></pre>
+  </div>
+
+  <h2>Cos'è e a cosa serve</h2>
+  <p>Il testo che esce da ChatGPT, Claude o un altro modello si legge sempre uguale: liscio e senza sapore, come la musica d'ascensore. Burocratese, calchi dall'inglese, trattini lunghi, ritmo piatto senza scarti. Una persona non scrive così. L'italiano vivo è irregolare: inciampa, si interrompe, accelera e rallenta.</p>
+  <p>humanizer-it non rende il testo umano in modo cosmetico. Toglie i marcatori della generazione automatica e allo stesso tempo rimette l'autore: l'opinione, il tono, il concreto. Sotto il cofano c'è un catalogo di 52 segni del testo IA in 12 categorie, 15 divieti assoluti e la calibrazione sulla voce dell'autore.</p>
+
+  <h2>Per chi</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>Autori e redattori</h3>
+      <p>La bozza dell'IA suona come un robot. La skill la trasforma in testo vivo, sulla tua voce, senza correggere a mano ogni «è importante notare che».</p>
+    </div>
+    <div class="card">
+      <h3>Marketing e contenuti</h3>
+      <p>Landing, newsletter, post. Togliere l'acqua, la «regola del tre» e le aperture vuote, tenere il senso e l'energia.</p>
+    </div>
+    <div class="card">
+      <h3>Esperti e blogger</h3>
+      <p>Testi lunghi da una bozza IA. Levare i cliché, aggiungere ritmo e carattere, tenere i fatti.</p>
+    </div>
+    <div class="card">
+      <h3>Sviluppatori su Claude</h3>
+      <p>Skill per Claude Code, Cowork e API. Si collega una volta e lavora nella pipeline come una normale skill.</p>
+    </div>
+  </div>
+
+  <h2 id="come-funziona">Come funziona: tre modalità</h2>
+  <ol>
+    <li><strong>Pulizia rapida.</strong> Toglie i 15 divieti assoluti: il trattino lungo, «non solo X, ma anche Y», «gioca un ruolo cruciale», «nel mondo di oggi», «è importante notare che». Intervento minimo, marcatori più evidenti via.</li>
+    <li><strong>Riscrittura completa.</strong> Passa tutti i 52 segni, calibra il testo sulla voce dell'autore, raddrizza il ritmo (alza la burstiness), leva burocratese e calchi, rimette intercalari e clitici.</li>
+    <li><strong>Audit senza modifiche.</strong> La skill mostra quali segni dell'IA ci sono nel testo e dove, senza riscrivere. Utile per capire cos'è che ti tradisce.</li>
+  </ol>
+
+  <h2>Prima e dopo</h2>
+  <div class="ba">
+    <div class="col before">
+      <div class="tag">Prima (IA)</div>
+      <p>«Nel mondo di oggi l'intelligenza artificiale gioca un ruolo sempre più cruciale e rappresenta un potente strumento che non solo ottimizza i flussi di lavoro, ma apre anche nuove possibilità in molti ambiti.»</p>
+    </div>
+    <div class="col after">
+      <div class="tag">Dopo (testo vivo)</div>
+      <p>«L'IA ormai non è una curiosità, è uno strumento di lavoro. Ci scrivi mail, ci analizzi dati, ci progetti interfacce. Il punto da un pezzo non è se si può, ma dove fa risparmiare tempo davvero e dove invece è solo d'intralcio.»</p>
+    </div>
+  </div>
+  <p class="muted small">Nota: nessun trattino lungo, niente «nel mondo di oggi» né «non solo… ma anche». Frasi di lunghezza diversa, con concreto e una posizione dell'autore.</p>
+
+  <h2>In cosa è diversa dallo humanizer inglese</h2>
+  <p>Lo <a href="https://github.com/blader/humanizer">humanizer</a> inglese sul testo italiano non funziona. I marcatori dell'IA in italiano hanno una fisica loro: il burocratese e lo stile nominale («l'implementazione dell'ottimizzazione»), i calchi dalla sintassi inglese (le «impronte algoritmiche dell'inglese» di cui scrive A.-M. De Cesare), gli intercalari spariti («allora», «insomma», «magari») e i clitici ci/ne con cui respira l'italiano vivo. Con i pattern inglesi non c'è quasi sovrapposizione.</p>
+  <p>In più, nel 2025-2026 i modelli hanno imparato a imitare la «profondità»: frasi spezzate, domande pseudo-socratiche, tono pseudo-terapeutico. È uno strato di marcatori a parte, che nessuno strumento inglese vede. humanizer-it prende anche quello.</p>
+
+  <h2>Da leggere</h2>
+  <div class="cards">
+    <div class="card">
+      <h3><a href="togliere-tracce-ia.html">Come togliere le tracce dell'IA</a></h3>
+      <p>Guida pratica con prima/dopo concreti: burocratese, trattino, ritmo, intercalari, clitici.</p>
+    </div>
+    <div class="card">
+      <h3><a href="segni-testo-ia.html">52 segni del testo IA</a></h3>
+      <p>Repertorio completo dei marcatori in italiano, raggruppati in 12 categorie.</p>
+    </div>
+    <div class="card">
+      <h3><a href="rilevatori-ia-italiano.html">I rilevatori IA funzionano in italiano?</a></h3>
+      <p>Analisi onesta con i nostri dati dall'eval: cosa prendono e cosa lasciano passare i rilevatori.</p>
+    </div>
+    <div class="card">
+      <h3><a href="antiplagio-vs-ia.html">Antiplagio e IA</a></h3>
+      <p>In cosa l'antiplagio è diverso da un rilevatore di IA e perché sono due cose distinte.</p>
+    </div>
+  </div>
+
+  <h2 id="faq">Domande frequenti</h2>
+  <div class="faq">
+    <details>
+      <summary>Come si umanizza un testo scritto dall'IA?</summary>
+      <p>Togli i marcatori della generazione automatica: burocratese e stile nominale (-zione, -mento), calchi dall'inglese, trattini lunghi, ritmo piatto. Rimetti la voce viva: intercalari («allora», «insomma», «magari»), clitici ci/ne, dislocazioni, frasi di lunghezza variabile, concreto al posto dell'astratto. La skill humanizer-it lo fa in automatico in Claude, su 52 segni del testo IA.</p>
+    </details>
+    <details>
+      <summary>humanizer-it è gratuita?</summary>
+      <p>Sì. È una skill open-source con licenza MIT. La skill è gratuita, paghi solo l'uso del modello Claude o lo usi nei limiti del tuo piano Claude Code, Cowork o API. Non ci sono abbonamenti separati per «rendere il testo umano online».</p>
+    </details>
+    <details>
+      <summary>Serve GPTZero per verificare il risultato?</summary>
+      <p>No. Inseguire lo «zero al rilevatore» è poco sensato: i rilevatori prendono i modelli con struttura anglosassone ma lasciano passare quelli nativamente italiani. Meglio ottimizzare qualità e leggibilità. Più dettagli nell'articolo <a href="rilevatori-ia-italiano.html">sui rilevatori IA in italiano</a>.</p>
+    </details>
+    <details>
+      <summary>In cosa humanizer-it è diversa dallo humanizer inglese?</summary>
+      <p>Il testo IA italiano ha una fisica sua: burocratese, calchi dall'inglese, intercalari e clitici mancanti, ironia per antifrasi appiattita. Le regole inglesi non si trasferiscono. humanizer-it è tarata sull'italiano e prende ciò che gli strumenti inglesi non vedono: pseudo-terapia, meditazione spezzata, decoro a emoji dei modelli 2025-2026.</p>
+    </details>
+  </div>
+
+  <div class="cta-row">
+    <a class="cta" href="https://github.com/ilyautov/humanizer-it">Installa la skill su GitHub</a>
+  </div>
+
+  <section class="tg-banner">
+    <div class="tg-card">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.94 3.27a1.5 1.5 0 0 0-1.62-.22L2.9 10.66c-1.22.54-1.16 2.3.1 2.74l4.4 1.54 1.7 5.32c.36 1.12 1.78 1.4 2.54.51l2.4-2.8 4.43 3.25c.9.66 2.18.17 2.4-.92l2.52-15.4a1.5 1.5 0 0 0-.45-1.63ZM9.5 14.4l8.4-7.6c.27-.24-.06-.65-.37-.46L7.4 12.6l-3.9-1.36 16.7-7.13-2.3 14.1-4.7-3.46-1.96 2.28-.74-2.63Z"/></svg>
+      <div class="tg-text">
+        <strong>Canale Telegram dell'autore: Under the Hood</strong>
+        <p>Su IA, sicurezza e come funzionano le cose sotto il cofano. Le analisi come questa escono prima lì.</p>
+      </div>
+      <a class="cta cta-tg" href="https://t.me/gorilla_under_hood">Iscriviti</a>
+    </div>
+  </section>
+
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="index.html">humanizer<span>-it</span></a>
+        <p>Skill open-source per Claude che toglie i segni dell'IA dal testo italiano e gli ridà una voce viva. Licenza MIT.</p>
+      </div>
+      <div>
+        <h4>Articoli</h4>
+        <ul>
+          <li><a href="togliere-tracce-ia.html">Togliere le tracce dell'IA</a></li>
+          <li><a href="segni-testo-ia.html">52 segni del testo IA</a></li>
+          <li><a href="rilevatori-ia-italiano.html">Rilevatori IA in italiano</a></li>
+          <li><a href="antiplagio-vs-ia.html">Antiplagio e IA</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Autore</h4>
+        <ul>
+          <li><a href="https://github.com/ilyautov/humanizer-it">GitHub: repository e installazione</a></li>
+          <li><a href="https://t.me/gorilla_under_hood">Telegram: Under the Hood</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>humanizer-it · MIT</span>
+      <a class="foot-cta" href="https://github.com/ilyautov/humanizer-it">Metti una stella su GitHub →</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

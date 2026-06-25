@@ -1,0 +1,5 @@
+interface:
+  display_name: "Humanizer IT"
+  short_description: "Removes AI traces from Italian text: 52 patterns, 15 hard bans, author voice."
+policy:
+  allow_implicit_invocation: true

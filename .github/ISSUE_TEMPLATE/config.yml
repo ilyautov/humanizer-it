@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Author's Telegram channel (Under the Hood)
+    url: https://t.me/gorilla_under_hood
+    about: Project news, write-ups on AI and security
+  - name: Parent project (humanizer-ru)
+    url: https://github.com/ilyautov/humanizer-ru
+    about: The Russian original this skill is forked from

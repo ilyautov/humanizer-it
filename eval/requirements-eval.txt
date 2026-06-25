@@ -1,0 +1,26 @@
+# Optional dependencies for the eval harness's scoring layer (humanizer-it).
+# Core (../requirements.txt) has none: the metrics and the regression gate work
+# without them. Install only for real detectors, the LLM judge, and meaning checks:
+#     pip install -r eval/requirements-eval.txt
+#
+# NOT installed in CI — there only the metrics mode runs (deterministic, free).
+#
+# IMPORTANT: the LLM layer (Ollama detectors, judge, faithfulness) runs on a LOCAL
+# Ollama (http://localhost:11434). An Anthropic key is NO LONGER REQUIRED — you
+# only need a running `ollama serve`. Faithfulness additionally needs an embedding
+# model: `ollama pull nomic-embed-text`. Recommended chat model — gemma3:4b
+# (`ollama pull gemma3:4b`); for --perplexity — gemma3:1b.
+
+# HTTP client: needed both for local Ollama (detectors/judge/faithfulness) and for
+# the cloud detectors GPTZero/Originality (if you use their keys).
+requests>=2.34.2
+
+# The LLM judge can optionally call the Anthropic API (ANTHROPIC_API_KEY). NOT
+# required: by default the judge runs on local Ollama.
+anthropic>=0.111.0
+
+# Local offline AI-text detector on transformers (eval/detectors/it_transformer.py).
+# Point IT_DETECTOR_MODEL at an Italian classifier (DeSegMa-IT / UmBERTo). These
+# are the heaviest deps — install only for a local run with GPU/CPU inference.
+transformers>=5.12.1
+torch>=2.12.1

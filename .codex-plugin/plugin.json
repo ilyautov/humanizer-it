@@ -1,0 +1,29 @@
+{
+  "name": "humanizer-it",
+  "version": "0.1.0",
+  "description": "Kills AI smell in Italian text: hard bans, deterministic scanner, anglo-calque suppression, 3 modes (rewrite / audit / targeted fix). | Elimina l'odore di IA dal testo italiano: ban assoluti, scanner deterministico, soppressione dei calchi dall'inglese.",
+  "author": {
+    "name": "Ilya Utov",
+    "email": "ilyautov@gmail.com",
+    "url": "https://github.com/ilyautov"
+  },
+  "homepage": "https://ilyautov.github.io/humanizer-it/",
+  "repository": "https://github.com/ilyautov/humanizer-it",
+  "license": "MIT",
+  "keywords": ["humanizer", "italian", "writing", "ai-detection", "text", "italiano", "umanizzare"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Humanizer IT",
+    "shortDescription": "Umanizza il testo italiano generato dall'IA",
+    "longDescription": "Prende il testo sterile di un'IA e gli ridà l'italiano vivo: elimina calchi dall'inglese, burocratese e trattini lunghi, riallinea il ritmo, calibra la voce dell'autore e restituisce filler, clitici, dislocazioni e ironia. Ban assoluti, modalità audit con scanner deterministico offline.",
+    "developerName": "Ilya Utov",
+    "category": "Writing",
+    "capabilities": ["Read", "Write"],
+    "websiteURL": "https://ilyautov.github.io/humanizer-it/",
+    "privacyPolicyURL": "https://github.com/ilyautov/humanizer-it/blob/main/PRIVACY_POLICY.md",
+    "defaultPrompt": ["Umanizza questo testo: ..."],
+    "brandColor": "#7AA7FF",
+    "composerIcon": "./assets/icon-512.png",
+    "logo": "./assets/icon-512.png"
+  }
+}

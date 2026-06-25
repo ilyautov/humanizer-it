@@ -1,0 +1,21 @@
+{
+  "name": "humanizer-it",
+  "description": "Kills AI smell in Italian text. Hard bans, deterministic scanner, 3 modes (rewrite / audit / targeted fix), voice calibration, quad-pass audit, anglo-calque suppression, return of living Italian (filler, clitics, dislocation, irony). | Elimina l'odore di IA dal testo italiano: ban assoluti, scanner deterministico, 3 modalità, calibrazione della voce, audit quad-pass, soppressione dei calchi dall'inglese.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Ilya Utov",
+    "email": "ilyautov@gmail.com"
+  },
+  "homepage": "https://github.com/ilyautov/humanizer-it",
+  "repository": "https://github.com/ilyautov/humanizer-it",
+  "license": "MIT",
+  "keywords": [
+    "humanizer",
+    "italian",
+    "writing",
+    "ai-detection",
+    "text",
+    "italiano",
+    "umanizzare"
+  ]
+}

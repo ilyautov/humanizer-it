@@ -1,0 +1,149 @@
+{
+  "description": "Trigger-eval corpus for humanizer-it. Checks NOT the quality of humanization (that's meta.json + run_eval.py) but the activation boundary: on which requests the skill SHOULD fire and on which it must stay silent (near-miss: code, English). The run is a light deterministic layer (run_triggers.py): the scope-phrase guard on the description + request modality (Italian / English / code; Italian and English split by a function-word + diacritics heuristic, since both are Latin script). No LLM, no keys, no network — runs in CI. The skill description is NOT duplicated here; it's read live from SKILL.md so the test catches description drift.",
+  "fields": {
+    "id": "unique case id",
+    "prompt": "the full user request (as it would reach the assistant)",
+    "lang": "it | en | code — dominant request modality (for the report breakdown)",
+    "expect": "trigger | no_trigger — should humanizer-it activate",
+    "category": "subgroup for breakdown and near-miss analysis",
+    "note": "why this verdict (falsifiability)"
+  },
+  "cases": [
+    {
+      "id": "trig_umanizza_01",
+      "prompt": "Umanizza questo testo: «Nel mondo di oggi l'intelligenza artificiale riveste un ruolo sempre più importante e rappresenta una soluzione completa per ottimizzare i flussi di lavoro.»",
+      "lang": "it",
+      "expect": "trigger",
+      "category": "explicit_request",
+      "note": "Direct verb «umanizza» + Italian AI text with burocratese. Core trigger."
+    },
+    {
+      "id": "trig_segni_ia_02",
+      "prompt": "Togli i segni dell'IA dal testo qui sotto:\nNel contesto attuale è importante notare che una comunicazione efficace rappresenta un fattore chiave per il successo di qualsiasi impresa.",
+      "lang": "it",
+      "expect": "trigger",
+      "category": "explicit_request",
+      "note": "«Togliere i segni dell'IA» is named directly in the description."
+    },
+    {
+      "id": "trig_naturale_03",
+      "prompt": "Rendi questo testo naturale e vivo, è troppo asciutto: La realizzazione di questo approccio garantisce un miglioramento della qualità del servizio ai clienti.",
+      "lang": "it",
+      "expect": "trigger",
+      "category": "explicit_request",
+      "note": "«naturale/vivo» — verbatim trigger from the description."
+    },
+    {
+      "id": "trig_come_umano_04",
+      "prompt": "Riscrivi come un umano, sembra un robot: Occorre sottolineare che l'adozione di tecnologie innovative favorisce il raggiungimento degli obiettivi prefissati.",
+      "lang": "it",
+      "expect": "trigger",
+      "category": "explicit_request",
+      "note": "«riscrivere come un umano» + «sembra un robot» — two triggers at once."
+    },
+    {
+      "id": "trig_burocratese_05",
+      "prompt": "Togli il burocratese dal paragrafo: Si procede all'espletamento delle attività di controllo nell'ambito del regolamento vigente per come stabilito.",
+      "lang": "it",
+      "expect": "trigger",
+      "category": "explicit_request",
+      "note": "«togliere il burocratese» — verbatim trigger."
+    },
+    {
+      "id": "trig_meno_formale_06",
+      "prompt": "Troppo prolisso e formale, rendilo meno formale e più asciutto: Si desidera evidenziare la particolare rilevanza di un approccio integrato alla risoluzione del problema posto.",
+      "lang": "it",
+      "expect": "trigger",
+      "category": "explicit_request",
+      "note": "«meno formale» + «prolisso» — both in the description scope."
+    },
+    {
+      "id": "trig_paste_riscrivi_07",
+      "prompt": "La nostra azienda offre un'ampia gamma di servizi volti a soddisfare le esigenze dei clienti nel contesto di mercato attuale. Puntiamo a garantire la massima qualità e un approccio personalizzato per ogni cliente.\n\nriscrivi",
+      "lang": "it",
+      "expect": "trigger",
+      "category": "paste_vague",
+      "note": "Pasted Italian AI text + a short «riscrivi» — the description catches this pattern directly."
+    },
+    {
+      "id": "trig_paste_artificiale_08",
+      "prompt": "L'intelligenza artificiale rappresenta un potente strumento che apre nuove possibilità e permette di risolvere un'ampia serie di compiti.\n\nsuona troppo artificiale, sistemalo",
+      "lang": "it",
+      "expect": "trigger",
+      "category": "paste_vague",
+      "note": "Italian paste + «troppo artificiale» — trigger by paste."
+    },
+    {
+      "id": "trig_paste_migliore_09",
+      "prompt": "L'implementazione del sistema ha permesso di migliorare significativamente gli indicatori e di garantire una crescita sostenibile dell'efficienza in ogni fase del ciclo produttivo.\n\nrendilo migliore",
+      "lang": "it",
+      "expect": "trigger",
+      "category": "paste_vague",
+      "note": "Italian text + «rendilo migliore» — borderline, but the description maps it to a trigger."
+    },
+    {
+      "id": "near_code_refactor_py_01",
+      "prompt": "Rifattorizza questa funzione, è troppo pesante:\n```python\ndef calc(items):\n    total = 0\n    for i in items:\n        total = total + i.price * i.qty\n    return total\n```",
+      "lang": "code",
+      "expect": "no_trigger",
+      "category": "code",
+      "note": "Request about CODE (even if the instruction is in Italian). description: «Do NOT use for: code»."
+    },
+    {
+      "id": "near_code_explain_js_02",
+      "prompt": "Spiega cosa fa questo codice:\n```js\nconst result = arr.filter(x => x.active).map(x => x.id);\n```",
+      "lang": "code",
+      "expect": "no_trigger",
+      "category": "code",
+      "note": "Explaining code — not humanizing text."
+    },
+    {
+      "id": "near_code_bug_py_03",
+      "prompt": "Perché qui esce un IndexError?\n```python\nfor i in range(len(a)):\n    print(a[i+1])\n```",
+      "lang": "code",
+      "expect": "no_trigger",
+      "category": "code",
+      "note": "Code debugging is out of the skill's scope."
+    },
+    {
+      "id": "near_code_sql_04",
+      "prompt": "Ottimizza la query, è lenta:\n```sql\nSELECT * FROM orders WHERE status = 'new' ORDER BY created_at;\n```",
+      "lang": "code",
+      "expect": "no_trigger",
+      "category": "code",
+      "note": "SQL optimization is a technical task, not text."
+    },
+    {
+      "id": "near_en_humanize_01",
+      "prompt": "Humanize this text so it doesn't sound like AI: In today's fast-paced world, leveraging cutting-edge solutions is essential for driving meaningful results across the organization.",
+      "lang": "en",
+      "expect": "no_trigger",
+      "category": "english",
+      "note": "English text. description: «for English use the original humanizer»."
+    },
+    {
+      "id": "near_en_rewrite_02",
+      "prompt": "Rewrite this to sound more natural and less robotic: It is important to note that effective communication serves as a key driver of success.",
+      "lang": "en",
+      "expect": "no_trigger",
+      "category": "english",
+      "note": "English request about English text — not the Italian skill."
+    },
+    {
+      "id": "near_en_remove_tells_03",
+      "prompt": "Remove the AI tells from this paragraph: Furthermore, this comprehensive approach not only enhances efficiency but also fosters innovation.",
+      "lang": "en",
+      "expect": "no_trigger",
+      "category": "english",
+      "note": "«Remove AI tells» in English — a job for the English humanizer."
+    },
+    {
+      "id": "near_en_robotic_04",
+      "prompt": "This sounds way too robotic, can you fix it? Our platform delivers seamless, end-to-end solutions tailored to your needs.",
+      "lang": "en",
+      "expect": "no_trigger",
+      "category": "english",
+      "note": "English paste + English request — outside the Italian scope."
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+# Not part of the skill package: dev environment and site/research material
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+docs/
+eval/
+assets/
+.github/
+.claude/
+.claude-plugin/
+.cursor-plugin/
+gemini-extension.json
+CHANGELOG.md
+CONTRIBUTING.md

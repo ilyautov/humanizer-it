@@ -1,0 +1,12 @@
+{
+  "name": "humanizer-it",
+  "displayName": "Humanizer IT",
+  "version": "0.1.0",
+  "description": "Kills AI smell in Italian text. Hard bans, anglo-calque suppression, voice calibration, quad-pass audit. Auto-activates on Italian text humanization requests.",
+  "author": {
+    "name": "Ilya Utov",
+    "email": "ilyautov@gmail.com"
+  },
+  "license": "MIT",
+  "keywords": ["humanizer", "italian", "writing", "ai-detection", "text", "italiano", "umanizzare"]
+}

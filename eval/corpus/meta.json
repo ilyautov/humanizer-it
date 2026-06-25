@@ -1,0 +1,352 @@
+{
+  "description": "Stratified corpus for the humanizer-it eval harness. raw/* — Italian texts saturated with AI markers, across types and 'models' (self-generated, no copyright; the skill's input). humanized/* — humanized rewrites of the same ids (skill output). human/* — KNOWN-human control: verbatim excerpts from Italian Wikipedia (CC BY-SA, pre-AI editing), used for the detectors' false-positive audit. See ATTRIBUTION.md. No copyrighted news text (Repubblica/Sole) is bundled — only Wikipedia and self-generated AI, per the project's legal design.",
+  "types": [
+    "marketing",
+    "expert",
+    "business",
+    "docs",
+    "reference",
+    "literary",
+    "social",
+    "academic",
+    "listicle",
+    "email"
+  ],
+  "source_models": [
+    "gpt",
+    "claude",
+    "gemini",
+    "human_wikipedia",
+    "literary_pd"
+  ],
+  "items": [
+    {
+      "id": "marketing_gpt_01",
+      "type": "marketing",
+      "source_model": "gpt",
+      "is_human": false,
+      "file": "raw/marketing_gpt_01.txt"
+    },
+    {
+      "id": "marketing_gemini_02",
+      "type": "marketing",
+      "source_model": "gemini",
+      "is_human": false,
+      "file": "raw/marketing_gemini_02.txt"
+    },
+    {
+      "id": "expert_claude_03",
+      "type": "expert",
+      "source_model": "claude",
+      "is_human": false,
+      "file": "raw/expert_claude_03.txt"
+    },
+    {
+      "id": "expert_gpt_04",
+      "type": "expert",
+      "source_model": "gpt",
+      "is_human": false,
+      "file": "raw/expert_gpt_04.txt"
+    },
+    {
+      "id": "business_claude_05",
+      "type": "business",
+      "source_model": "claude",
+      "is_human": false,
+      "file": "raw/business_claude_05.txt"
+    },
+    {
+      "id": "business_gemini_06",
+      "type": "business",
+      "source_model": "gemini",
+      "is_human": false,
+      "file": "raw/business_gemini_06.txt"
+    },
+    {
+      "id": "docs_gpt_07",
+      "type": "docs",
+      "source_model": "gpt",
+      "is_human": false,
+      "file": "raw/docs_gpt_07.txt"
+    },
+    {
+      "id": "wiki_garda",
+      "type": "reference",
+      "source_model": "human_wikipedia",
+      "is_human": true,
+      "file": "human/wiki_garda.txt",
+      "provenance": "it.wikipedia.org/wiki/Lago_di_Garda",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "id": "wiki_verdi",
+      "type": "reference",
+      "source_model": "human_wikipedia",
+      "is_human": true,
+      "file": "human/wiki_verdi.txt",
+      "provenance": "it.wikipedia.org/wiki/Giuseppe_Verdi",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "id": "wiki_programmazione",
+      "type": "reference",
+      "source_model": "human_wikipedia",
+      "is_human": true,
+      "file": "human/wiki_programmazione.txt",
+      "provenance": "it.wikipedia.org/wiki/Programmazione_(informatica)",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "id": "wiki_dolomiti",
+      "type": "reference",
+      "source_model": "human_wikipedia",
+      "is_human": true,
+      "file": "human/wiki_dolomiti.txt",
+      "provenance": "it.wikipedia.org/wiki/Dolomiti",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "id": "wiki_leonardo",
+      "type": "reference",
+      "source_model": "human_wikipedia",
+      "is_human": true,
+      "file": "human/wiki_leonardo.txt",
+      "provenance": "it.wikipedia.org/wiki/Leonardo_da_Vinci",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "id": "wiki_impero_romano",
+      "type": "reference",
+      "source_model": "human_wikipedia",
+      "is_human": true,
+      "file": "human/wiki_impero_romano.txt",
+      "provenance": "it.wikipedia.org/wiki/Impero_romano",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "id": "wiki_fotosintesi",
+      "type": "reference",
+      "source_model": "human_wikipedia",
+      "is_human": true,
+      "file": "human/wiki_fotosintesi.txt",
+      "provenance": "it.wikipedia.org/wiki/Fotosintesi_clorofilliana",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "id": "wiki_divina_commedia",
+      "type": "reference",
+      "source_model": "human_wikipedia",
+      "is_human": true,
+      "file": "human/wiki_divina_commedia.txt",
+      "provenance": "it.wikipedia.org/wiki/Divina_Commedia",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "id": "wiki_etna",
+      "type": "reference",
+      "source_model": "human_wikipedia",
+      "is_human": true,
+      "file": "human/wiki_etna.txt",
+      "provenance": "it.wikipedia.org/wiki/Etna",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "id": "wiki_rinascimento",
+      "type": "reference",
+      "source_model": "human_wikipedia",
+      "is_human": true,
+      "file": "human/wiki_rinascimento.txt",
+      "provenance": "it.wikipedia.org/wiki/Rinascimento",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "id": "wiki_galileo",
+      "type": "reference",
+      "source_model": "human_wikipedia",
+      "is_human": true,
+      "file": "human/wiki_galileo.txt",
+      "provenance": "it.wikipedia.org/wiki/Galileo_Galilei",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "id": "wiki_mediterraneo",
+      "type": "reference",
+      "source_model": "human_wikipedia",
+      "is_human": true,
+      "file": "human/wiki_mediterraneo.txt",
+      "provenance": "it.wikipedia.org/wiki/Mar_Mediterraneo",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "id": "wiki_costituzione",
+      "type": "reference",
+      "source_model": "human_wikipedia",
+      "is_human": true,
+      "file": "human/wiki_costituzione.txt",
+      "provenance": "it.wikipedia.org/wiki/Costituzione_della_Repubblica_Italiana",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "id": "wiki_dna",
+      "type": "reference",
+      "source_model": "human_wikipedia",
+      "is_human": true,
+      "file": "human/wiki_dna.txt",
+      "provenance": "it.wikipedia.org/wiki/DNA",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "id": "manzoni_promessi_sposi",
+      "type": "literary",
+      "source_model": "literary_pd",
+      "is_human": true,
+      "file": "literary/manzoni_promessi_sposi.txt",
+      "provenance": "Alessandro Manzoni, I Promessi Sposi (1840), incipit; via Project Gutenberg eBook 45334",
+      "license": "Public domain"
+    },
+    {
+      "id": "wiki_caravaggio",
+      "type": "reference",
+      "source_model": "human_wikipedia",
+      "is_human": true,
+      "file": "human/wiki_caravaggio.txt",
+      "provenance": "it.wikipedia.org/wiki/Caravaggio",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "id": "wiki_puccini",
+      "type": "reference",
+      "source_model": "human_wikipedia",
+      "is_human": true,
+      "file": "human/wiki_puccini.txt",
+      "provenance": "it.wikipedia.org/wiki/Giacomo_Puccini",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "id": "wiki_pizza",
+      "type": "reference",
+      "source_model": "human_wikipedia",
+      "is_human": true,
+      "file": "human/wiki_pizza.txt",
+      "provenance": "it.wikipedia.org/wiki/Pizza",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "id": "wiki_calcio",
+      "type": "reference",
+      "source_model": "human_wikipedia",
+      "is_human": true,
+      "file": "human/wiki_calcio.txt",
+      "provenance": "it.wikipedia.org/wiki/Calcio_%28sport%29",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "id": "wiki_montessori",
+      "type": "reference",
+      "source_model": "human_wikipedia",
+      "is_human": true,
+      "file": "human/wiki_montessori.txt",
+      "provenance": "it.wikipedia.org/wiki/Maria_Montessori",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "id": "wiki_colosseo",
+      "type": "reference",
+      "source_model": "human_wikipedia",
+      "is_human": true,
+      "file": "human/wiki_colosseo.txt",
+      "provenance": "it.wikipedia.org/wiki/Colosseo",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "id": "wiki_vulcano",
+      "type": "reference",
+      "source_model": "human_wikipedia",
+      "is_human": true,
+      "file": "human/wiki_vulcano.txt",
+      "provenance": "it.wikipedia.org/wiki/Vulcano",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "id": "wiki_euro",
+      "type": "reference",
+      "source_model": "human_wikipedia",
+      "is_human": true,
+      "file": "human/wiki_euro.txt",
+      "provenance": "it.wikipedia.org/wiki/Euro",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "id": "wiki_alpi",
+      "type": "reference",
+      "source_model": "human_wikipedia",
+      "is_human": true,
+      "file": "human/wiki_alpi.txt",
+      "provenance": "it.wikipedia.org/wiki/Alpi",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "id": "wiki_caffe",
+      "type": "reference",
+      "source_model": "human_wikipedia",
+      "is_human": true,
+      "file": "human/wiki_caffe.txt",
+      "provenance": "it.wikipedia.org/wiki/Caff%C3%A8",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "id": "verga_malavoglia",
+      "type": "literary",
+      "source_model": "literary_pd",
+      "is_human": true,
+      "file": "literary/verga_malavoglia.txt",
+      "provenance": "Giovanni Verga, I Malavoglia (1881), incipit; transcription via it.wikisource.org",
+      "license": "Public domain (text); transcription CC BY-SA 3.0"
+    },
+    {
+      "id": "collodi_pinocchio",
+      "type": "literary",
+      "source_model": "literary_pd",
+      "is_human": true,
+      "file": "literary/collodi_pinocchio.txt",
+      "provenance": "Carlo Collodi, Le avventure di Pinocchio (1881-1883), cap. 1; transcription via it.wikisource.org",
+      "license": "Public domain (text); transcription CC BY-SA 3.0"
+    },
+    {
+      "id": "social_claude_08",
+      "type": "social",
+      "source_model": "claude",
+      "is_human": false,
+      "file": "raw/social_claude_08.txt",
+      "provenance": "self-generated AI-style text (no copyright)",
+      "license": "n/a"
+    },
+    {
+      "id": "academic_gemini_09",
+      "type": "academic",
+      "source_model": "gemini",
+      "is_human": false,
+      "file": "raw/academic_gemini_09.txt",
+      "provenance": "self-generated AI-style text (no copyright)",
+      "license": "n/a"
+    },
+    {
+      "id": "listicle_gpt_10",
+      "type": "listicle",
+      "source_model": "gpt",
+      "is_human": false,
+      "file": "raw/listicle_gpt_10.txt",
+      "provenance": "self-generated AI-style text (no copyright)",
+      "license": "n/a"
+    },
+    {
+      "id": "email_claude_11",
+      "type": "email",
+      "source_model": "claude",
+      "is_human": false,
+      "file": "raw/email_claude_11.txt",
+      "provenance": "self-generated AI-style text (no copyright)",
+      "license": "n/a"
+    }
+  ]
+}

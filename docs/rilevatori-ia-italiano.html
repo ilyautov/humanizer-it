@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>I rilevatori IA funzionano in italiano?</title>
+<meta name="description" content="I rilevatori IA in italiano vanno meglio che in altre lingue, ma per un motivo rovesciato: prendono la struttura inglese del testo. Analisi onesta con i nostri dati.">
+<meta name="keywords" content="rilevatore IA italiano, come verificare testo IA, gptzero italiano, controllo testo intelligenza artificiale, rilevare testo AI">
+<link rel="canonical" href="https://ilyautov.github.io/humanizer-it/rilevatori-ia-italiano.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="I rilevatori IA funzionano in italiano?">
+<meta property="og:description" content="In italiano i rilevatori vanno meglio, ma la lezione è rovesciata: il segnale che catturano è spesso l'anglicismo. Analisi con i nostri dati dall'eval.">
+<meta property="og:url" content="https://ilyautov.github.io/humanizer-it/rilevatori-ia-italiano.html">
+<meta property="og:image" content="https://ilyautov.github.io/humanizer-it/social-preview.png">
+<meta property="og:locale" content="it_IT">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="I rilevatori IA funzionano in italiano?">
+<meta name="twitter:image" content="https://ilyautov.github.io/humanizer-it/social-preview.png">
+<meta name="twitter:description" content="In italiano i rilevatori prendono la struttura inglese del testo, non l'IA in sé. Cosa significa davvero.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/png" href="icon.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "I rilevatori IA funzionano in italiano?",
+  "description": "In italiano i rilevatori IA vanno meglio che in molte altre lingue, ma per un motivo rovesciato: il segnale che catturano è spesso la struttura anglosassone del testo. Analisi con dati dell'eval.",
+  "inLanguage": "it",
+  "author": {
+    "@type": "Organization",
+    "name": "humanizer-it",
+    "url": "https://github.com/ilyautov/humanizer-it"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "humanizer-it",
+    "url": "https://ilyautov.github.io/humanizer-it/"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://ilyautov.github.io/humanizer-it/rilevatori-ia-italiano.html"
+  },
+  "url": "https://ilyautov.github.io/humanizer-it/rilevatori-ia-italiano.html"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://ilyautov.github.io/humanizer-it/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "I rilevatori IA in italiano",
+      "item": "https://ilyautov.github.io/humanizer-it/rilevatori-ia-italiano.html"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Si può verificare con certezza un testo IA in italiano?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No, con certezza no. I rilevatori danno una probabilità, non un verdetto. In italiano vanno anche meglio della media, ma restano due problemi: i falsi positivi sul testo umano formale (un estratto enciclopedico può prendere un punteggio alto come un testo IA) e il fatto che il confine umano/IA si sta dissolvendo, perché nel 2026 quasi ogni testo è scritto almeno in parte con un assistente. Un punteggio alto è un indizio, non una prova."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Perché i rilevatori funzioneranno sempre peggio?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Perché il testo umano puro sta sparendo. Se quasi tutti scrivono con un assistente, il confine tra umano e IA si dissolve per costruzione: il rilevatore deve distinguere due cose che ormai si assomigliano. Già oggi, per avere un campione umano davvero pulito, abbiamo dovuto prendere voci enciclopediche scritte ben prima di ChatGPT. In più c'è il domain shift: un rilevatore tarato su un dominio non si trasferisce a un altro."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "GPTZero legge l'italiano?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sì, GPTZero accetta testo in italiano e restituisce un punteggio. Lavora su segnali statistici come perplexity e burstiness, che funzionano anche fuori dall'inglese, ma è tarato soprattutto su modelli e dati anglofoni. Sull'italiano tende a riconoscere bene i testi dei modelli English-first (GPT e simili) e a essere meno affidabile sui modelli nativamente italiani. Resta uno strumento probabilistico, non un giudice."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Qual è il miglior rilevatore IA per l'italiano?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Per l'italiano esiste un benchmark nativo, DeSegMa-IT presentato a EVALITA 2026: basato su UmBERTo, raggiunge un'accuratezza intorno a 0,9458 sui suoi dati. È il riferimento più serio sulla lingua. Ma attenzione: nessun rilevatore è affidabile fuori dal proprio dominio, e anche i migliori inciampano sui modelli italiani e sul testo umano formale. Il numero da benchmark non si trasferisce sul tuo caso reale."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "I testi dei modelli italiani come Minerva si riconoscono?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Molto meno. È la scoperta più interessante: i testi dei modelli nativamente italiani, come Minerva-7B, sfuggono al rilevatore (intercettati solo intorno al 50% di recall), mentre i modelli English-first vengono presi a oltre il 90%. Il motivo è che il rilevatore si aggancia al substrato anglosassone del testo. Un modello che scrive in italiano vero, senza calchi dall'inglese, è più difficile da distinguere da una persona."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">humanizer<span>-it</span></a>
+    <nav class="site-nav" aria-label="Menu principale">
+      <a href="index.html">Home</a>
+      <a href="togliere-tracce-ia.html">Togliere le tracce dell'IA</a>
+      <a href="segni-testo-ia.html">52 segni</a>
+      <a href="rilevatori-ia-italiano.html" aria-current="page">Rilevatori IA</a>
+      <a href="antiplagio-vs-ia.html">Antiplagio e IA</a>
+    </nav>
+    <div class="head-icons">
+      <a href="https://github.com/ilyautov/humanizer-it" aria-label="Repository GitHub di humanizer-it">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55 0-.27-.01-1.17-.02-2.12-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.69 1.25 3.35.96.1-.75.4-1.25.73-1.54-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.16-1.18 3.16-1.18.63 1.59.24 2.76.12 3.05.74.81 1.18 1.83 1.18 3.09 0 4.41-2.69 5.38-5.25 5.67.41.35.78 1.05.78 2.12 0 1.53-.01 2.76-.01 3.14 0 .3.2.66.8.55A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
+      </a>
+      <a href="https://t.me/gorilla_under_hood" aria-label="Canale Telegram dell'autore, Under the Hood">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.94 3.27a1.5 1.5 0 0 0-1.62-.22L2.9 10.66c-1.22.54-1.16 2.3.1 2.74l4.4 1.54 1.7 5.32c.36 1.12 1.78 1.4 2.54.51l2.4-2.8 4.43 3.25c.9.66 2.18.17 2.4-.92l2.52-15.4a1.5 1.5 0 0 0-.45-1.63ZM9.5 14.4l8.4-7.6c.27-.24-.06-.65-.37-.46L7.4 12.6l-3.9-1.36 16.7-7.13-2.3 14.1-4.7-3.46-1.96 2.28-.74-2.63Z"/></svg>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main>
+<div class="wrap">
+
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a> / I rilevatori IA in italiano</nav>
+
+  <h1>I rilevatori IA funzionano in italiano?</h1>
+  <p class="lede">Risposta breve: in italiano i rilevatori vanno meglio che in molte altre lingue, ma la lezione è rovesciata. Non prendono l'IA in sé, prendono la struttura anglosassone del testo. E togliere quella struttura è esattamente ciò che rende il tuo italiano migliore.</p>
+
+  <div class="callout"><strong>In 10 secondi:</strong> i rilevatori IA in italiano funzionano soprattutto quando il testo "puzza" di inglese. I modelli English-first (GPT e simili) vengono presi a oltre il 90%, quelli nativamente italiani sfuggono. Quindi inseguire lo "zero al rilevatore" è inutile: punta alla qualità, e il resto viene da sé.</div>
+
+  <h2>Cosa misura davvero un rilevatore</h2>
+  <p>Un rilevatore IA non legge il significato del testo. Guarda dei segnali statistici e prova a indovinare se quel ritmo di parole assomiglia di più a una persona o a un modello. Tre segnali contano più degli altri.</p>
+  <ul>
+    <li><strong>Perplexity</strong>: quanto è prevedibile la parola successiva. Un modello tende a scegliere la parola più probabile, quindi il testo IA risulta "troppo liscio".</li>
+    <li><strong>Burstiness</strong>: la variabilità del ritmo. Una persona alterna frasi lunghe e corte, accelera e rallenta; il modello tira dritto a velocità costante.</li>
+    <li><strong>Morfosintassi nativa italiana</strong>: come sono costruite le frasi, dove cadono i clitici, quanto pesa il burocratese e quanti calchi ci sono dall'inglese.</li>
+  </ul>
+
+  <h2>In italiano c'è un benchmark serio</h2>
+  <p>L'italiano, a differenza di molte lingue, ha un suo banco di prova nativo: DeSegMa-IT, presentato a EVALITA 2026. È basato su UmBERTo (un modello del filone BERT addestrato sull'italiano) e sui suoi dati raggiunge un'accuratezza intorno a 0,9458. Sulla carta è un risultato ottimo.</p>
+  <p>Il problema non è il numero. Il problema è cosa c'è dietro quel numero.</p>
+
+  <h2>La scoperta rovesciata: il rilevatore caccia l'inglese</h2>
+  <p>Quando si guarda dove il rilevatore sbaglia e dove no, salta fuori una cosa controintuitiva. I testi che gli sfuggono sono quelli generati da modelli nativamente italiani: Minerva-7B, per esempio, viene intercettato solo intorno al 50% di recall. I testi che invece il rilevatore prende quasi sempre sono quelli dei modelli English-first, GPT e compagnia, riconosciuti a oltre il 90%.</p>
+  <p>La spiegazione è semplice e fa riflettere: il rilevatore non si aggancia all'"essere generato da una macchina", si aggancia al substrato anglosassone del testo. I modelli English-first ragionano in una struttura inglese e la traducono in italiano, e sono proprio quei calchi a tradirli. Un modello che scrive in italiano vero, senza l'impronta dell'inglese, è molto più difficile da distinguere da una persona.</p>
+
+  <div class="callout data"><strong>Dal nostro eval (FP-audit):</strong> un rilevatore LLM locale ha valutato 3 controlli umani, estratti di Wikipedia italiana (CC BY-SA, scritti da persone), e ha dato a tutti e tre circa 0,85 di "probabilità IA", lo stesso punteggio dei testi IA veri. False positive rate 3 su 3 in quel run. È un'illustrazione su un controllo piccolo (modello locale gemma3:4b, corpus compatto), non una metrica industriale calibrata, ma la direzione è chiara. Metodo e dati grezzi nel repo: <a href="https://github.com/ilyautov/humanizer-it/tree/main/eval">github.com/ilyautov/humanizer-it/tree/main/eval</a> (sezione FP-audit in RESULTS.md).</div>
+
+  <h2>Due problemi che peggioreranno</h2>
+  <h3>Il testo umano "puro" sta sparendo</h3>
+  <p>Nel 2026 quasi ogni testo è scritto almeno in parte con un assistente. Una bozza generata, una frase rifinita, una riformulazione chiesta al modello: il confine tra umano e IA si dissolve per costruzione. Per costruire un campione umano davvero pulito, nel nostro eval abbiamo dovuto prendere voci enciclopediche scritte ben prima di ChatGPT. Da qui in avanti diventerà solo più difficile trovare testo "umano al 100%".</p>
+  <h3>Domain shift</h3>
+  <p>Un rilevatore tarato su un dominio non si trasferisce a un altro. Se è stato addestrato su articoli giornalistici, su un testo accademico o su un post di marketing perde colpi. Il bel numero di benchmark vive nel suo dominio: sul tuo caso reale vale molto meno.</p>
+
+  <h2>Perché inseguire lo "zero al rilevatore" è inutile</h2>
+  <p>Mettendo insieme i pezzi, la caccia al punteggio basso è doppiamente inutile. In italiano è ancora più debole, perché il segnale rilevabile è spesso proprio l'anglicismo: la sintassi calcata, il burocratese, il ritmo piatto. E togliere gli anglicismi è esattamente ciò che rende il testo un italiano migliore.</p>
+  <p>Qui sta il punto: qualità e "passare il rilevatore" coincidono come effetto collaterale. Se scrivi (o riscrivi) in italiano vero, con voce e ritmo, il punteggio scende da solo. Non perché hai ingannato la macchina, ma perché hai tolto ciò che la macchina riconosceva.</p>
+
+  <div class="cards">
+    <div class="card">
+      <h3>Obiettivo sbagliato: "zero al rilevatore"</h3>
+      <p>Aggiusti il testo per un numero. Aggiungi rumore, spezzi a caso, cambi parole a caso. Il risultato è un italiano peggiore che magari oggi passa e domani no, quando il rilevatore cambia. Hai lavorato per la macchina, non per chi legge.</p>
+    </div>
+    <div class="card">
+      <h3>Obiettivo giusto: un italiano migliore</h3>
+      <p>Togli burocratese e calchi dall'inglese, alzi la burstiness, rimetti la voce e il concreto. Il testo è più bello da leggere e, come effetto collaterale, il punteggio del rilevatore scende. Lavori per chi legge, e il resto viene da sé.</p>
+    </div>
+  </div>
+
+  <h2>Cosa fa humanizer-it</h2>
+  <p>humanizer-it non punta a battere un rilevatore: punta alla qualità. Toglie i 52 segni del testo IA, alza la burstiness, rimette la voce dell'autore. Se vuoi capire i dettagli, leggi <a href="index.html">cos'è humanizer-it</a>, il repertorio dei <a href="segni-testo-ia.html">52 segni</a> e la guida pratica su <a href="togliere-tracce-ia.html">come togliere le tracce dell'IA</a>.</p>
+
+  <h2>Domande frequenti</h2>
+  <div class="faq">
+    <details>
+      <summary>Si può verificare con certezza un testo IA in italiano?</summary>
+      <p>No, con certezza no. I rilevatori danno una probabilità, non un verdetto. In italiano vanno anche meglio della media, ma restano due problemi: i falsi positivi sul testo umano formale (un estratto enciclopedico può prendere un punteggio alto come un testo IA) e il fatto che il confine umano/IA si sta dissolvendo, perché nel 2026 quasi ogni testo è scritto almeno in parte con un assistente. Un punteggio alto è un indizio, non una prova.</p>
+    </details>
+    <details>
+      <summary>Perché i rilevatori funzioneranno sempre peggio?</summary>
+      <p>Perché il testo umano puro sta sparendo. Se quasi tutti scrivono con un assistente, il confine tra umano e IA si dissolve per costruzione: il rilevatore deve distinguere due cose che ormai si assomigliano. Già oggi, per avere un campione umano davvero pulito, abbiamo dovuto prendere voci enciclopediche scritte ben prima di ChatGPT. In più c'è il domain shift: un rilevatore tarato su un dominio non si trasferisce a un altro.</p>
+    </details>
+    <details>
+      <summary>GPTZero legge l'italiano?</summary>
+      <p>Sì, GPTZero accetta testo in italiano e restituisce un punteggio. Lavora su segnali statistici come perplexity e burstiness, che funzionano anche fuori dall'inglese, ma è tarato soprattutto su modelli e dati anglofoni. Sull'italiano tende a riconoscere bene i testi dei modelli English-first (GPT e simili) e a essere meno affidabile sui modelli nativamente italiani. Resta uno strumento probabilistico, non un giudice.</p>
+    </details>
+    <details>
+      <summary>Qual è il miglior rilevatore IA per l'italiano?</summary>
+      <p>Per l'italiano esiste un benchmark nativo, DeSegMa-IT presentato a EVALITA 2026: basato su UmBERTo, raggiunge un'accuratezza intorno a 0,9458 sui suoi dati. È il riferimento più serio sulla lingua. Ma attenzione: nessun rilevatore è affidabile fuori dal proprio dominio, e anche i migliori inciampano sui modelli italiani e sul testo umano formale. Il numero da benchmark non si trasferisce sul tuo caso reale.</p>
+    </details>
+    <details>
+      <summary>I testi dei modelli italiani come Minerva si riconoscono?</summary>
+      <p>Molto meno. È la scoperta più interessante: i testi dei modelli nativamente italiani, come Minerva-7B, sfuggono al rilevatore (intercettati solo intorno al 50% di recall), mentre i modelli English-first vengono presi a oltre il 90%. Il motivo è che il rilevatore si aggancia al substrato anglosassone del testo. Un modello che scrive in italiano vero, senza calchi dall'inglese, è più difficile da distinguere da una persona.</p>
+    </details>
+  </div>
+
+  <div class="cta-row">
+    <a class="cta" href="https://github.com/ilyautov/humanizer-it">Installa humanizer-it</a>
+    <a class="cta-secondary" href="togliere-tracce-ia.html">Come togliere le tracce dell'IA →</a>
+  </div>
+
+  <section class="tg-banner">
+    <div class="tg-card">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.94 3.27a1.5 1.5 0 0 0-1.62-.22L2.9 10.66c-1.22.54-1.16 2.3.1 2.74l4.4 1.54 1.7 5.32c.36 1.12 1.78 1.4 2.54.51l2.4-2.8 4.43 3.25c.9.66 2.18.17 2.4-.92l2.52-15.4a1.5 1.5 0 0 0-.45-1.63ZM9.5 14.4l8.4-7.6c.27-.24-.06-.65-.37-.46L7.4 12.6l-3.9-1.36 16.7-7.13-2.3 14.1-4.7-3.46-1.96 2.28-.74-2.63Z"/></svg>
+      <div class="tg-text">
+        <strong>Canale Telegram dell'autore: Under the Hood</strong>
+        <p>Su IA, sicurezza e come funzionano le cose sotto il cofano. Le analisi come questa escono prima lì.</p>
+      </div>
+      <a class="cta cta-tg" href="https://t.me/gorilla_under_hood">Iscriviti</a>
+    </div>
+  </section>
+
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="index.html">humanizer<span>-it</span></a>
+        <p>Skill open-source per Claude che toglie i segni dell'IA dal testo italiano e gli ridà una voce viva. Licenza MIT.</p>
+      </div>
+      <div>
+        <h4>Articoli</h4>
+        <ul>
+          <li><a href="togliere-tracce-ia.html">Togliere le tracce dell'IA</a></li>
+          <li><a href="segni-testo-ia.html">52 segni del testo IA</a></li>
+          <li><a href="rilevatori-ia-italiano.html">Rilevatori IA in italiano</a></li>
+          <li><a href="antiplagio-vs-ia.html">Antiplagio e IA</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Autore</h4>
+        <ul>
+          <li><a href="https://github.com/ilyautov/humanizer-it">GitHub: repository e installazione</a></li>
+          <li><a href="https://t.me/gorilla_under_hood">Telegram: Under the Hood</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>humanizer-it · MIT</span>
+      <a class="foot-cta" href="https://github.com/ilyautov/humanizer-it">Metti una stella su GitHub →</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

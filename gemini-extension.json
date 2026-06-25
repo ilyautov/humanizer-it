@@ -1,0 +1,5 @@
+{
+  "name": "humanizer-it",
+  "version": "0.1.0",
+  "description": "Elimina l'odore di IA dal testo italiano: ban assoluti, scanner deterministico, soppressione dei calchi dall'inglese, calibrazione della voce, audit quad-pass. Kills AI smell in Italian text."
+}

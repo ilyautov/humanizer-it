@@ -1,0 +1,9 @@
+# Core deterministic metrics (skills/humanizer-it/scripts/: humanizer_metrics,
+# scan.py; dev tools in scripts/) have ZERO runtime dependencies — plain Python
+# stdlib only. Italian morphosyntax is done with regex heuristics, so no spaCy
+# or pymorphy is needed. The self-test, the scanner and the metrics-mode eval
+# all run on a bare Python 3.11.
+#
+# Optional eval-harness extras (real detectors, LLM judge) live in
+# eval/requirements-eval.txt — they are heavy (torch/transformers) and not
+# needed for CI or the metrics MVP.

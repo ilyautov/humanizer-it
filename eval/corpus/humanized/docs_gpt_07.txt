@@ -1,0 +1,9 @@
+Configurare l'autenticazione richiede tre passaggi. Falli in ordine, perché il secondo dipende dal primo.
+
+Genera la chiave API dal pannello, sezione Sviluppatori. Copiala subito: non la rivedrai più.
+
+Aggiungi la chiave alle variabili d'ambiente del server, mai nel codice. Se finisce in un commit, considerala compromessa e rigenerala.
+
+Verifica con una chiamata di prova all'endpoint `/auth/ping`. Risposta 200? Sei a posto. Risposta 401? Hai sbagliato a copiare la chiave, ricomincia dal primo passaggio.
+
+Una nota sulla sicurezza: ruota la chiave ogni novanta giorni. È noioso, ma il giorno che ti bucano sei contento di averlo fatto.

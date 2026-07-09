@@ -23,4 +23,4 @@ anthropic>=0.111.0
 # Point IT_DETECTOR_MODEL at an Italian classifier (DeSegMa-IT / UmBERTo). These
 # are the heaviest deps — install only for a local run with GPU/CPU inference.
 transformers>=5.12.1
-torch>=2.12.1
+torch>=2.13.0

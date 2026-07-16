@@ -22,5 +22,5 @@ anthropic>=0.111.0
 # Local offline AI-text detector on transformers (eval/detectors/it_transformer.py).
 # Point IT_DETECTOR_MODEL at an Italian classifier (DeSegMa-IT / UmBERTo). These
 # are the heaviest deps — install only for a local run with GPU/CPU inference.
-transformers>=5.12.1
+transformers>=5.14.0
 torch>=2.12.1

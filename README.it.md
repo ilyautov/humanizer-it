@@ -52,9 +52,12 @@ Stampa un punteggio `CLEANLINESS: N/100` e una fascia (pulito / ritocco / riscri
 
 ### 1. Claude.ai (interfaccia web)
 
-1. Scarica il repo come ZIP: `https://github.com/ilyautov/humanizer-it/archive/refs/heads/main.zip`
+1. Scarica la skill impacchettata:
+   [humanizer-it.zip](https://github.com/ilyautov/humanizer-it/releases/latest/download/humanizer-it.zip)
 2. Apri Claude.ai → **Settings** → **Capabilities** → **Skills**.
-3. Clicca **Upload skill** e seleziona lo ZIP.
+3. Clicca **Upload skill** e seleziona l'archivio scaricato.
+
+> Non prendere `archive/refs/heads/main.zip`: il caricatore vuole la cartella della skill alla radice dell'archivio, e nell'archivio del repo sta dentro `humanizer-it-main/skills/humanizer-it/`. Lo ZIP di release pesa 92 KB di sola skill; l'archivio del repo dieci volte tanto, quasi tutto sito ed eval. Per costruirlo da sé: `python scripts/build_release_zip.py --output dist/humanizer-it.zip .`
 
 ### 2. Organizzazioni (Enterprise e Team)
 

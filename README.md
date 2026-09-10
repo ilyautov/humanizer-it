@@ -52,9 +52,12 @@ It prints a `CLEANLINESS: N/100` score and a band (clean / edit / rewrite). See 
 
 ### 1. Claude.ai (Web UI)
 
-1. Download the repo as a ZIP: `https://github.com/ilyautov/humanizer-it/archive/refs/heads/main.zip`
+1. Download the packaged skill:
+   [humanizer-it.zip](https://github.com/ilyautov/humanizer-it/releases/latest/download/humanizer-it.zip)
 2. Open Claude.ai → **Settings** → **Capabilities** → **Skills**.
-3. Click **Upload skill** and select the ZIP.
+3. Click **Upload skill** and select the downloaded archive.
+
+> Don't take `archive/refs/heads/main.zip`: the uploader wants the skill folder at the archive root, and in the repo archive it sits inside `humanizer-it-main/skills/humanizer-it/`. The release ZIP is 92 KB of skill; the repo archive is ten times that, most of it website and eval corpus. To build it yourself: `python scripts/build_release_zip.py --output dist/humanizer-it.zip .`
 
 ### 2. Organizations (Enterprise & Team)
 

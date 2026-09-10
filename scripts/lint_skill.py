@@ -9,7 +9,7 @@ Catches exactly the classes of regression that otherwise only the eye catches:
      to show one in its "good" output.
   4. Each approved example (After:) itself passes the scanner: zero HARD BANS.
      A skill that breaks its own bans in examples won't pass CI.
-  5. The root SKILL.md is identical to skills/humanizer-it/SKILL.md.
+  5. No root SKILL.md mirror (it would make the CLI install the whole repo).
 
 Run:  python scripts/lint_skill.py
 Exit code 1 on any error — a gate for CI/pre-commit.
@@ -154,16 +154,25 @@ def check_scanner_ships_with_skill() -> None:
 
 
 def check_sync() -> None:
+    # The skill has exactly one home: skills/humanizer-it/. A root SKILL.md
+    # used to mirror it so that the raw GitHub repo ZIP could be uploaded to
+    # claude.ai, which wants the skill folder at the archive root. The price
+    # was paid by every CLI install: with a SKILL.md at the root, the skills
+    # CLI treats the WHOLE repository as the skill and copies 940K of website,
+    # eval corpus and CI config into the user's agent, plus a nested second
+    # copy of the skill itself. The release ZIP (scripts/build_release_zip.py,
+    # 92K, skill only) serves claude.ai now, so the mirror is gone and must
+    # stay gone.
     if not CANON.exists():
         errors.append(f"missing canonical file {CANON}")
         return
-    if not MIRROR.exists():
-        errors.append(f"missing mirror {MIRROR}")
-        return
-    if CANON.read_text(encoding="utf-8") != MIRROR.read_text(encoding="utf-8"):
-        errors.append("root SKILL.md and skills/humanizer-it/ diverged (sync needed)")
+    if MIRROR.exists():
+        errors.append(
+            "root SKILL.md is back: it makes `npx skills add` copy the whole "
+            "repo instead of the skill. claude.ai is served by the release ZIP"
+        )
     else:
-        notes.append("✓ root SKILL.md is in sync with skills/")
+        notes.append("✓ no root SKILL.md mirror: the CLI installs the skill only")
 
 
 # --- repo-wide hygiene gates (durable; lock in the IT-fork cleanup) ---------
@@ -179,7 +188,6 @@ _PARENT_REF_ALLOWLIST = {
     "README.md",
     "README.it.md",
     "CHANGELOG.md",
-    "SKILL.md",
     "skills/humanizer-it/SKILL.md",
     ".github/ISSUE_TEMPLATE/config.yml",
     "scripts/lint_skill.py",

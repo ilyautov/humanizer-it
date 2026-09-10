@@ -14,3 +14,4 @@ eval/out/
 # macOS / local tooling
 .DS_Store
 .claude/
+dist/

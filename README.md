@@ -10,6 +10,21 @@ Claude Code / Cowork plugin. Kills AI smell in **Italian** text. The English [hu
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Version](https://img.shields.io/badge/version-0.1.0-blueviolet)](CHANGELOG.md)
+[![Patterns](https://img.shields.io/badge/patterns-52-1F6F5C)](#what-you-get)
+[![Hard bans](https://img.shields.io/badge/hard%20bans-15-1F6F5C)](#what-you-get)
+[![Stars](https://img.shields.io/github/stars/ilyautov/humanizer-it?style=flat&label=stars&logo=github&logoColor=white)](https://github.com/ilyautov/humanizer-it/stargazers)
+
+**Quick start**, one command for any agent (Claude Code, Cursor, Codex, Cline and dozens more):
+
+```bash
+npx skills add ilyautov/humanizer-it
+```
+
+> **Before:** «Nel mondo di oggi l'intelligenza artificiale riveste un ruolo sempre più importante. È importante notare che questa tecnologia rappresenta un potente strumento per l'ottimizzazione dei flussi di lavoro.»
+>
+> **After:** «Nell'ultimo anno ho messo strumenti IA in tre progetti. Due sono andati il doppio più veloci. Il terzo è saltato, perché il team ha smesso di controllare quello che sputava il modello.»
+>
+> Three hard bans in two sentences («Nel mondo di oggi», «riveste un ruolo», «È importante notare che»). [Full breakdown below](#before--after).
 
 > Italian fork of the battle-tested [humanizer-ru](https://github.com/ilyautov/humanizer-ru). Same language-independent core (perplexity/burstiness, modes, contrastive subtraction, fact-lock, quad-pass audit); the marker content is rebuilt for Italian and grounded in the research in [CORPUS-MARKERS-IT / CORPUS-DESIGN-IT](https://github.com/ilyautov/humanizer-it).
 
@@ -102,7 +117,7 @@ Before:
 After:
 > Nell'ultimo anno ho messo strumenti IA in tre progetti. Due sono andati il doppio più veloci. Il terzo è saltato, perché il team ha smesso di controllare quello che sputava il modello.
 
-Several hard bans triggered in two sentences («Nel mondo di oggi», «gioca un ruolo», «È importante notare che»). Typical.
+Three hard bans in two sentences («Nel mondo di oggi», «riveste un ruolo», «È importante notare che»). Typical.
 
 ## Do AI detectors work on Italian?
 

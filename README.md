@@ -130,6 +130,6 @@ MIT
 - [**marketplaces-mcp-ru**](https://github.com/ilyautov/marketplaces-mcp-ru): Wildberries, Ozon, Yandex Market and Avito straight from the agent
 - [**small-business-ru**](https://github.com/ilyautov/small-business-ru): 34 skills for Russian small business, the numbers computed in code
 - [**consilium-principis**](https://github.com/ilyautov/consilium-principis): a board of thinkers where every quote is checked word for word
-- [**hefest**](https://github.com/ilyautov/hefest): chemical safety for an industrial plant, fully offline
+- [**hefest**](https://github.com/ilyautov/hefest): chemical safety for an industrial plant, kept inside the plant's own network
 
 Everything else: [github.com/ilyautov](https://github.com/ilyautov). Useful? Star it, that is how other people find it.

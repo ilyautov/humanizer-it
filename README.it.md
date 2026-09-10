@@ -10,6 +10,22 @@ Plugin per Claude Code / Cowork. Toglie l'odore dell'IA dal testo **italiano**. 
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Version](https://img.shields.io/badge/version-0.1.0-blueviolet)](CHANGELOG.md)
+[![Pattern](https://img.shields.io/badge/pattern-52-1F6F5C)](#cosa-ottieni)
+[![Divieti assoluti](https://img.shields.io/badge/divieti%20assoluti-15-1F6F5C)](#cosa-ottieni)
+[![Stelle](https://img.shields.io/github/stars/ilyautov/humanizer-it?style=flat&label=stelle&logo=github&logoColor=white)](https://github.com/ilyautov/humanizer-it/stargazers)
+[![Sito](https://img.shields.io/badge/sito-ilyautov.github.io-9A3E1A)](https://ilyautov.github.io/humanizer-it/)
+
+**Avvio rapido**, un comando per qualsiasi agente (Claude Code, Cursor, Codex, Cline e decine di altri):
+
+```bash
+npx skills add ilyautov/humanizer-it
+```
+
+> **Prima:** «Nel mondo di oggi l'intelligenza artificiale riveste un ruolo sempre più importante. È importante notare che questa tecnologia rappresenta un potente strumento per l'ottimizzazione dei flussi di lavoro.»
+>
+> **Dopo:** «Nell'ultimo anno ho messo strumenti IA in tre progetti. Due sono andati il doppio più veloci. Il terzo è saltato, perché il team ha smesso di controllare quello che sputava il modello.»
+>
+> In due frasi sono scattati diversi divieti assoluti: «Nel mondo di oggi», «riveste un ruolo», «È importante notare che». Tipico.
 
 > Fork italiano del collaudato [humanizer-ru](https://github.com/ilyautov/humanizer-ru). Stesso nucleo indipendente dalla lingua (perplexity/burstiness, modalità, sottrazione contrastiva, fact-lock, audit a quattro passaggi); il contenuto dei marcatori è ricostruito per l'italiano e fondato sulla ricerca in [CORPUS-MARKERS-IT / CORPUS-DESIGN-IT](https://github.com/ilyautov/humanizer-it).
 
@@ -93,16 +109,6 @@ Riscrivilo, sembra un robot: [incolla il testo]
 ```
 
 Attivatori: «umanizza», «togli i segni dell'IA», «rendilo naturale», «sembra artificiale», «riscrivi come un umano».
-
-## Prima / Dopo
-
-Prima:
-> Nel mondo di oggi l'intelligenza artificiale riveste un ruolo sempre più importante. È importante notare che questa tecnologia rappresenta un potente strumento per l'ottimizzazione dei flussi di lavoro.
-
-Dopo:
-> Nell'ultimo anno ho messo strumenti IA in tre progetti. Due sono andati il doppio più veloci. Il terzo è saltato, perché il team ha smesso di controllare quello che sputava il modello.
-
-In due frasi sono scattati diversi divieti assoluti («Nel mondo di oggi», «riveste un ruolo», «È importante notare che»). Tipico.
 
 ## I rilevatori IA funzionano sull'italiano?
 

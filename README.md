@@ -13,6 +13,7 @@ Claude Code / Cowork plugin. Kills AI smell in **Italian** text. The English [hu
 [![Patterns](https://img.shields.io/badge/patterns-52-1F6F5C)](#what-you-get)
 [![Hard bans](https://img.shields.io/badge/hard%20bans-15-1F6F5C)](#what-you-get)
 [![Stars](https://img.shields.io/github/stars/ilyautov/humanizer-it?style=flat&label=stars&logo=github&logoColor=white)](https://github.com/ilyautov/humanizer-it/stargazers)
+[![Site](https://img.shields.io/badge/site-ilyautov.github.io-9A3E1A)](https://ilyautov.github.io/humanizer-it/)
 
 **Quick start**, one command for any agent (Claude Code, Cursor, Codex, Cline and dozens more):
 

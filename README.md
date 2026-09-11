@@ -152,3 +152,5 @@ MIT
 - [**hefest**](https://github.com/ilyautov/hefest): chemical safety for an industrial plant, kept inside the plant's own network
 
 Everything else: [github.com/ilyautov](https://github.com/ilyautov). Useful? Star it, that is how other people find it.
+
+Built by [Ilya Utov](https://github.com/ilyautov) at [AI Frontier](https://aifrontier.tech), a lab for applied AI.

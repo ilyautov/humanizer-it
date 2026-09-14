@@ -151,6 +151,6 @@ MIT
 - [**consilium-principis**](https://github.com/ilyautov/consilium-principis): a board of thinkers where every quote is checked word for word
 - [**hefest**](https://github.com/ilyautov/hefest): chemical safety for an industrial plant, kept inside the plant's own network
 
-Everything else: [github.com/ilyautov](https://github.com/ilyautov). Useful? Star it, that is how other people find it.
+Everything else: [ilyautov.github.io](https://ilyautov.github.io/), 21 open tools grouped by what they do. Useful? Star it, that is how other people find it.
 
 Built by [Ilya Utov](https://github.com/ilyautov) at [AI Frontier](https://aifrontier.tech), a lab for applied AI.

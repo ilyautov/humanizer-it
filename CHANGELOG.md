@@ -4,6 +4,20 @@ All notable changes to humanizer-it are documented here.
 The format follows [Keep a Changelog](https://keepachangelog.com/); the project
 uses [semantic versioning](https://semver.org/).
 
+## [Unreleased]
+
+### Fixed
+- **The skill installs in Hermes Agent.** Its built-in skills-guard scanner
+  rated the skill DANGEROUS (`echo … | python3 scan.py -` in `SKILL.md` matched
+  `echo_pipe_exec`), and `--force` does not override that verdict. The stdin
+  example is now a heredoc; scanner behaviour is unchanged.
+- `.github/workflows/clawhub.yml` comments are in English, so `lint_skill.py`
+  passes its Cyrillic-free check again.
+
+### Added
+- `lint_skill.py` checks the skill against install-scanner rules
+  (Hermes skills-guard), so this regression fails the lint.
+
 ## [0.1.0] — 2026-06-25
 
 Initial release. Italian fork of [humanizer-ru](https://github.com/ilyautov/humanizer-ru) v3.11.0.

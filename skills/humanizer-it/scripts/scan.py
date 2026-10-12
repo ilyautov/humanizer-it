@@ -3,7 +3,7 @@
 
 Uso (dalla radice del repo; per la skill installata il path è: <cartella skill>/scripts/scan.py):
     python skills/humanizer-it/scripts/scan.py path/to/text.txt
-    echo "il tuo testo" | python skills/humanizer-it/scripts/scan.py -
+    python skills/humanizer-it/scripts/scan.py - <<'EOF'   (testo su stdin)
     python skills/humanizer-it/scripts/scan.py text.txt --json
 
 È la metà «macchina» della modalità «Audit». Per l'umanizzazione completa

@@ -1,27 +1,27 @@
 name: Publish to ClawHub
 
-# Реестр скиллов OpenClaw: https://clawhub.ai
+# OpenClaw skill registry: https://clawhub.ai
 #
-# Запускается только руками, сам по коммитам не срабатывает.
-# Разовая настройка, до первого реального выпуска:
+# Manual trigger only, never runs on commits.
+# One-time setup, before the first real release:
 #   1. clawhub.ai -> Sign in with GitHub
-#   2. создать токен в веб-интерфейсе
-#   3. положить его в Settings -> Secrets and variables -> Actions
-#      под именем CLAWHUB_TOKEN
-# Без токена режим «preview» отработает, «publish» упадёт на авторизации.
+#   2. create a token in the web UI
+#   3. add it under Settings -> Secrets and variables -> Actions
+#      as CLAWHUB_TOKEN
+# Without the token "preview" works and "publish" fails on auth.
 
 on:
   workflow_dispatch:
     inputs:
       mode:
-        description: preview показывает план, publish выкладывает в реестр
+        description: preview shows the plan, publish uploads to the registry
         type: choice
         options: [preview, publish]
         default: preview
       owner:
         description: >-
-          Хендл публикатора на clawhub.ai. Нужен, когда слаг заняли другие:
-          у нас так вышло с content-strategy и contract-review.
+          Publisher handle on clawhub.ai. Needed when someone else
+          already took the slug.
         type: string
         default: ""
 

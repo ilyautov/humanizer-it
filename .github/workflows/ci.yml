@@ -1,0 +1,61 @@
+name: CI
+
+# Free deterministic gate: skill self-test, sanity scan and the eval harness in
+# metrics mode (no real detectors, no LLM judge, no keys, no network). Heavy
+# detectors (torch/transformers) and cloud APIs are NOT run in CI — that would
+# make the run paid and non-deterministic.
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  eval:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6.2.0
+        with:
+          python-version: "3.11"
+
+      - name: Install core deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Metric regression tests (test_markers)
+        run: python scripts/test_markers.py
+
+      - name: Cleanliness-score regression tests (test_score)
+        run: python scripts/test_score.py
+
+      - name: Skill self-test (lint_skill)
+        run: python scripts/lint_skill.py
+
+      - name: Packaging smoke-test (test_package)
+        run: python scripts/test_package.py
+
+      # Goal of this step: "the scanner runs and returns valid JSON", NOT "the text
+      # is clean". scan.py exit 1 means "found HARD BANS" — for formal human text
+      # (Wikipedia) that's expected (see eval/RESULTS.md, FP audit).
+      - name: Sanity scan (scan.py runs and returns valid JSON)
+        run: |
+          set +e
+          python skills/humanizer-it/scripts/scan.py eval/corpus/human/wiki_garda.txt --json > /tmp/scan.json
+          code=$?
+          set -e
+          if [ "$code" -gt 1 ]; then echo "scan.py crashed (exit $code)"; exit "$code"; fi
+          python -c "import json; r = json.load(open('/tmp/scan.json')); print('scan ok, hard bans:', r['hard_ban_count'])"
+
+      - name: Eval harness (metrics-only, no detectors/judge)
+        run: python eval/run_eval.py
+
+      # Skill activation boundary: deterministic layer (language/modality + the
+      # scope-phrase guard from the SKILL.md description). The LLM router is
+      # optional and NOT run in CI. Fails if a near-miss (code/English) is taken
+      # as a trigger, or if a scope phrase dropped out of the description.
+      - name: Trigger-eval (activation boundary, deterministic layer)
+        run: python eval/run_triggers.py

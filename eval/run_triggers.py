@@ -44,7 +44,7 @@ EVAL_DIR = Path(__file__).resolve().parent
 ROOT = EVAL_DIR.parent
 DEFAULT_CORPUS = EVAL_DIR / "triggers.json"
 DEFAULT_OUT = EVAL_DIR / "out"
-SKILL_MD = ROOT / "SKILL.md"
+SKILL_MD = ROOT / "skills" / "humanizer-it" / "SKILL.md"
 
 # Description scope phrases: these substrings define the activation boundary. If
 # any disappears from SKILL.md, the description has blurred the scope and

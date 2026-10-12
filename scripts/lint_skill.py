@@ -10,6 +10,8 @@ Catches exactly the classes of regression that otherwise only the eye catches:
   4. Each approved example (After:) itself passes the scanner: zero HARD BANS.
      A skill that breaks its own bans in examples won't pass CI.
   5. No root SKILL.md mirror (it would make the CLI install the whole repo).
+  6. The skill passes static install scanners (Hermes skills-guard): no
+     echo | python, no literal invisible characters, no bare pip install.
 
 Run:  python scripts/lint_skill.py
 Exit code 1 on any error — a gate for CI/pre-commit.
@@ -257,12 +259,52 @@ def check_docs_links() -> None:
         notes.append("✓ docs/ internal links resolve")
 
 
+# Static skill-install scanner rules that block installation. Taken from Hermes
+# Agent skills-guard (tools/skills_guard.py, v10): a DANGEROUS verdict on a
+# community skill is not overridden even by --force, and any finding requires
+# --force. The patterns are behavioural: the skill is safe, but the text looks
+# like an attack.
+_GUARD_PATTERNS = [
+    (re.compile(r"echo\s+[^\n]*\|\s*(?:ba|z|da|k)?sh\b|echo\s+[^\n]*\|\s*(?:python|perl|ruby|node)"),
+     "echo | interpreter (echo_pipe_exec, CRITICAL)"),
+    (re.compile(r"!`[^`\s][^`\n]*`"), "'!`...`' (inline_shell_exec, HIGH)"),
+    (re.compile(r"pip\s+install\s+(?!-r\s)(?!.*==)"), "unpinned pip install (unpinned_pip_install)"),
+    (re.compile(r"\\u[0-9a-fA-F]{4}.*\\u[0-9a-fA-F]{4}.*\\u[0-9a-fA-F]{4}"),
+     "three \\uXXXX on one line (unicode_escape_chain), use \\N{NAME}"),
+]
+_GUARD_INVISIBLE = re.compile("[​-‍⁠⁢-⁤﻿‪-‮⁦-⁩]")
+_GUARD_MAX_FILES = 50
+
+
+def check_install_scanners() -> None:
+    """The skill passes skill-install scanners with zero findings."""
+    skill_dir = CANON.parent
+    files = [p for p in sorted(skill_dir.rglob("*"))
+             if p.is_file() and "__pycache__" not in p.parts and p.suffix != ".pyc"]
+    if len(files) > _GUARD_MAX_FILES:
+        errors.append(f"skill has {len(files)} files > {_GUARD_MAX_FILES}: install scanners flag it")
+    hits = 0
+    for p in files:
+        loc = p.relative_to(skill_dir)
+        for i, line in enumerate(p.read_text(encoding="utf-8").split("\n"), start=1):
+            if _GUARD_INVISIBLE.search(line):
+                errors.append(f"literal invisible character, write \\N{{NAME}}: {loc}:{i}")
+                hits += 1
+            for rx, why in _GUARD_PATTERNS:
+                if rx.search(line):
+                    errors.append(f"install scanner will block: {why}: {loc}:{i}")
+                    hits += 1
+    if not hits:
+        notes.append(f"✓ install scanners: 0 findings in {len(files)} files")
+
+
 def main() -> int:
     text = CANON.read_text(encoding="utf-8") if CANON.exists() else MIRROR.read_text(encoding="utf-8")
     check_patterns(text)
     check_counts(text)
     check_frontmatter(text)
     check_scanner_ships_with_skill()
+    check_install_scanners()
     check_em_dash_in_examples(text)
     check_examples_pass_scanner(text)
     check_sync()

@@ -13,4 +13,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-      - uses: hashgraph-online/ai-plugin-scanner-action@ac513da02cd2d28e6da5593e55add3f5b4cdce1e # v1
+      - uses: hashgraph-online/ai-plugin-scanner-action@d7cf6e5bffd3a40be801e038c9705e1e67086c18 # v1
